@@ -1,0 +1,81 @@
+/* ============================================
+   BLOG & PROOF PAGE RESPONSIVE OVERRIDES
+   Desktop-first with mobile breakpoint isolation
+   ONLY applies to blog.html and proof.html
+   ============================================ */
+
+/* ===== BLOG PAGE GRID ===== */
+
+/* Desktop: 3 columns (base in HTML: grid-cols-3) */
+/* No override needed for >= 1024px */
+
+/* Tablet: 2 columns - ONLY for blog-grid */
+@media (max-width: 1023px) and (min-width: 768px) {
+
+    /* Only target blog page grids */
+    #blogGrid,
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Mobile: 1 column - ONLY for blog-grid */
+@media (max-width: 767px) {
+
+    /* Only target blog page grids */
+    #blogGrid,
+    .blog-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+    }
+}
+
+/* ===== PROOF PAGE GRID ===== */
+
+/* Desktop: 4 columns (base in HTML: grid-cols-4) */
+/* No override needed for >= 1024px */
+
+/* Tablet: 2 columns - ONLY for proof-grid */
+@media (max-width: 1023px) and (min-width: 768px) {
+
+    /* Only target proof page grids */
+    #proof-grid,
+    .proof-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Mobile: 1 column - ONLY for proof-grid */
+@media (max-width: 767px) {
+
+    /* Only target proof page grids */
+    #proof-grid,
+    .proof-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+    }
+}
+
+/* ===== CARD RESPONSIVENESS ===== */
+/* Only target blog and proof page cards */
+
+@media (max-width: 767px) {
+
+    .blog-card,
+    #proof-grid .card {
+        max-width: 100%;
+    }
+
+    .blog-card-image,
+    #proof-grid .gallery-item>div:first-child {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .blog-card-image,
+    #proof-grid .gallery-item>div:first-child {
+        height: 160px;
+    }
+}

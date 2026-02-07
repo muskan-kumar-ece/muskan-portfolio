@@ -1,0 +1,194 @@
+/* ============================================
+   IDENTITY PAGE MOBILE-FIRST RESPONSIVE
+   ============================================ */
+
+/* Hero Section Container */
+.identity-hero {
+    padding-top: 150px;
+    padding-bottom: 48px;
+}
+
+/* Desktop Layout: Image left, Text right */
+.identity-hero-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Profile Image Container */
+.identity-profile-container {
+    flex-shrink: 0;
+}
+
+.identity-profile-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.identity-profile-image {
+    width: 280px;
+    height: 350px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 20px 60px rgba(79, 140, 255, 0.3);
+}
+
+/* Text Content */
+.identity-text-content {
+    flex: 1;
+}
+
+.identity-text-content h1 {
+    margin-bottom: 24px;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.identity-text-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+}
+
+.identity-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ===== TABLET RESPONSIVE (769px - 1024px) ===== */
+@media (max-width: 1024px) {
+    .identity-hero-layout {
+        gap: 32px;
+    }
+
+    .identity-profile-image {
+        width: 220px;
+        height: 280px;
+        font-size: 4rem;
+    }
+
+    .identity-text-content p {
+        font-size: 17px;
+    }
+}
+
+/* ===== MOBILE RESPONSIVE (below 768px) ===== */
+@media (max-width: 768px) {
+    .identity-hero {
+        padding-top: 120px;
+        padding-bottom: 48px;
+    }
+
+    /* CRITICAL: Vertical stacking on mobile */
+    .identity-hero-layout {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+
+    /* Profile Image - Centered & Smaller */
+    .identity-profile-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    .identity-profile-image-wrapper {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .identity-profile-image {
+        width: 180px;
+        height: 220px;
+        font-size: 3.5rem;
+        margin: 0 auto;
+    }
+
+    /* Text Content - Centered & Readable */
+    .identity-text-content {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 var(--space-md);
+    }
+
+    .identity-text-content h1 {
+        font-size: clamp(1.75rem, 6vw, 2.25rem);
+        margin-bottom: 16px;
+    }
+
+    .identity-text-content p {
+        font-size: clamp(0.95rem, 4vw, 1.05rem);
+        line-height: 1.6;
+        margin-bottom: 24px;
+        max-width: 100%;
+    }
+
+    /* Buttons - Full Width Stacked */
+    .identity-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .identity-buttons .btn {
+        width: 100%;
+        min-height: 48px;
+        justify-content: center;
+        font-size: 16px;
+    }
+}
+
+/* ===== SMALL MOBILE (below 425px) ===== */
+@media (max-width: 425px) {
+    .identity-hero {
+        padding-top: 100px;
+    }
+
+    .identity-profile-image {
+        width: 160px;
+        height: 200px;
+        font-size: 3rem;
+    }
+
+    .identity-text-content {
+        width: 95%;
+    }
+
+    .identity-text-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .identity-text-content p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== EXTRA SMALL (below 375px) ===== */
+@media (max-width: 375px) {
+    .identity-profile-image {
+        width: 140px;
+        height: 180px;
+        font-size: 2.5rem;
+    }
+}
+
+/* Prevent horizontal overflow globally */
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    overflow-x: hidden;
+}
