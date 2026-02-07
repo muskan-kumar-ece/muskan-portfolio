@@ -39,7 +39,6 @@ muskankumar/
 ├── blog.html               # Blog/Articles
 ├── gallery.html            # Visual gallery with filters
 ├── connect.html            # Social connections hub
-├── contact.html            # Contact form
 ├── sitemap.xml             # SEO sitemap for search engines
 ├── robots.txt              # Search engine crawling rules
 │
