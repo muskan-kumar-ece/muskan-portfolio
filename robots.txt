@@ -1,0 +1,36 @@
+# robots.txt for muskankumar.in
+# This file tells search engines how to crawl the website
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Disallow indexing of certain directories (if present)
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.gemini/
+
+# Allow crawling of CSS and JavaScript for better rendering
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+
+# Sitemap location (helps search engines find all pages)
+Sitemap: https://muskankumar.in/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+# Crawl-delay: 1
+
+# Additional rules for specific search engines
+
+# Google specific settings
+User-agent: Googlebot
+Allow: /
+
+# Bing specific settings  
+User-agent: Bingbot
+Allow: /
+
+# Allow Google Image Bot to index images
+User-agent: Googlebot-Image
+Allow: /assets/images/
