@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with Muskan Kumar on social media platforms.">
+    <title>Connect | Muskan Kumar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive-global.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader-logo">MK</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+    <canvas id="particles-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <div class="gradient-mesh"></div>
+
+    <!-- Menu Backdrop for Mobile -->
+    <div class="menu-backdrop"></div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo"><span>MK</span></a>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="identity.html" class="navbar-link">Identity</a></li>
+                <li><a href="ecosystem.html" class="navbar-link">Ecosystem</a></li>
+                <li><a href="proof.html" class="navbar-link">Proof</a></li>
+                <li><a href="timeline.html" class="navbar-link">Timeline</a></li>
+                <li><a href="lab.html" class="navbar-link">Lab</a></li>
+                <li><a href="blog.html" class="navbar-link">Blog</a></li>
+                <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+                <li><a href="connect.html" class="navbar-link active">Connect</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <button class="mobile-menu-btn"
+                    aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="command-palette-backdrop"></div>
+    <div class="command-palette">
+        <input type="text" class="command-palette-input" placeholder="Type a command or search... (Ctrl+K)">
+        <div class="command-palette-results"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="section" style="padding-top: 150px;">
+        <div class="container text-center">
+            <h1 class="reveal">Let's <span class="gradient-text">Connect</span></h1>
+            <p class="reveal"
+                style="font-size: var(--text-lg); color: var(--text-secondary); max-width: 600px; margin: var(--space-lg) auto var(--space-2xl);">
+                Find me across the internet. I'm always open to interesting conversations and collaborations.
+            </p>
+        </div>
+    </section>
+
+    <!-- Social Cards -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container container-narrow">
+            <div class="grid" style="gap: var(--space-lg);">
+
+                <!-- GitHub -->
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="social-card reveal">
+                    <div class="social-card-icon github">
+                        <i data-lucide="github" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 class="social-card-title">GitHub</h3>
+                        <p class="social-card-handle">@muskan-kumar-ece</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        style="width: 20px; height: 20px; color: var(--text-muted); margin-left: auto;"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="social-card reveal"
+                    style="transition-delay: 100ms;">
+                    <div class="social-card-icon linkedin">
+                        <i data-lucide="linkedin" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 class="social-card-title">LinkedIn</h3>
+                        <p class="social-card-handle">Muskan Kumar</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        style="width: 20px; height: 20px; color: var(--text-muted); margin-left: auto;"></i>
+                </a>
+
+                <!-- Twitter / X -->
+                <a href="https://x.com/muskankumar7842" target="_blank" class="social-card reveal"
+                    style="transition-delay: 200ms;">
+                    <div class="social-card-icon twitter">
+                        <i data-lucide="twitter" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 class="social-card-title">X / Twitter</h3>
+                        <p class="social-card-handle">@muskankumar7842</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        style="width: 20px; height: 20px; color: var(--text-muted); margin-left: auto;"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="social-card reveal"
+                    style="transition-delay: 300ms;">
+                    <div class="social-card-icon instagram">
+                        <i data-lucide="instagram" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 class="social-card-title">Instagram</h3>
+                        <p class="social-card-handle">@muskan_kumar._</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        style="width: 20px; height: 20px; color: var(--text-muted); margin-left: auto;"></i>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank" class="social-card reveal"
+                    style="transition-delay: 400ms;">
+                    <div class="social-card-icon youtube">
+                        <i data-lucide="youtube" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 class="social-card-title">YouTube</h3>
+                        <p class="social-card-handle">Circuit Guruji</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        style="width: 20px; height: 20px; color: var(--text-muted); margin-left: auto;"></i>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/muskan.kumar.424124" target="_blank" class="social-card reveal"
+                    style="transition-delay: 500ms;">
+                    <div class="social-card-icon facebook"
+                        style="background: linear-gradient(135deg, #1877F2, #0d5dbd);">
+                        <i data-lucide="facebook" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 class="social-card-title">Facebook</h3>
+                        <p class="social-card-handle">Muskan Kumar</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        style="width: 20px; height: 20px; color: var(--text-muted); margin-left: auto;"></i>
+                </a>
+
+                <!-- Google Scholar -->
+                <a href="https://scholar.google.com/citations?hl=en&user=sYrv0GcAAAAJ" target="_blank"
+                    class="social-card reveal" style="transition-delay: 600ms;">
+                    <div class="social-card-icon google-scholar"
+                        style="background: linear-gradient(135deg, #4285F4, #356ac3);">
+                        <i data-lucide="graduation-cap" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 class="social-card-title">Google Scholar</h3>
+                        <p class="social-card-handle">Research Publications</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        style="width: 20px; height: 20px; color: var(--text-muted); margin-left: auto;"></i>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:muskankumar7842@gmail.com" class="social-card reveal" style="transition-delay: 700ms;">
+                    <div class="social-card-icon email">
+                        <i data-lucide="mail" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 class="social-card-title">Email</h3>
+                        <p class="social-card-handle">muskankumar7842@gmail.com</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        style="width: 20px; height: 20px; color: var(--text-muted); margin-left: auto;"></i>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background: var(--bg-surface);">
+        <div class="container text-center">
+            <h2 class="reveal">Want to Work Together?</h2>
+            <p class="reveal" style="color: var(--text-secondary); margin: var(--space-lg) auto; max-width: 500px;">
+                Have a project idea or just want to say hi? Drop me a message!
+            </p>
+            <a href="contact.html" class="btn btn-primary reveal magnetic-btn">
+                <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+                Send a Message
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">
+                © 2024 Muskan Kumar. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="footer-social-link"
+                    aria-label="GitHub">
+                    <i data-lucide="github" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="footer-social-link"
+                    aria-label="LinkedIn">
+                    <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://x.com/muskankumar7842" target="_blank" class="footer-social-link" aria-label="Twitter">
+                    <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="footer-social-link"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank" class="footer-social-link"
+                    aria-label="YouTube">
+                    <i data-lucide="youtube" style="width: 20px; height: 20px;"></i>
+                </a>
+            </div>
+
+            <button class="back-to-top" aria-label="Back to top">
+                <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/effects.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

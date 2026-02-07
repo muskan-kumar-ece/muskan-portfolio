@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muskan Kumar's Blog - Technical articles, startup journey, and research notes.">
+    <title>Blog | Muskan Kumar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive-global.css">
+    <link rel="stylesheet" href="css/blog-proof-responsive.css">
+
+    <style>
+        .blog-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-default);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-card-content {
+            padding: var(--space-xl);
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            margin-bottom: var(--space-md);
+        }
+
+        .blog-card-title {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-sm);
+            transition: color var(--transition-fast);
+        }
+
+        .blog-card:hover .blog-card-title {
+            color: var(--accent-primary);
+        }
+
+        .blog-card-excerpt {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+        }
+
+        .blog-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader-logo">MK</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+    <canvas id="particles-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <div class="gradient-mesh"></div>
+
+    <!-- Menu Backdrop for Mobile -->
+    <div class="menu-backdrop"></div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo"><span>MK</span></a>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="identity.html" class="navbar-link">Identity</a></li>
+                <li><a href="ecosystem.html" class="navbar-link">Ecosystem</a></li>
+                <li><a href="proof.html" class="navbar-link">Proof</a></li>
+                <li><a href="timeline.html" class="navbar-link">Timeline</a></li>
+                <li><a href="lab.html" class="navbar-link">Lab</a></li>
+                <li><a href="blog.html" class="navbar-link active">Blog</a></li>
+                <li><a href="connect.html" class="navbar-link">Connect</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <button class="mobile-menu-btn"
+                    aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="command-palette-backdrop"></div>
+    <div class="command-palette">
+        <input type="text" class="command-palette-input" placeholder="Type a command or search... (Ctrl+K)">
+        <div class="command-palette-results"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="section" style="padding-top: 150px;">
+        <div class="container text-center">
+            <h1 class="reveal">The <span class="gradient-text">Blog</span></h1>
+            <p class="reveal"
+                style="font-size: var(--text-lg); color: var(--text-secondary); max-width: 600px; margin: var(--space-lg) auto var(--space-2xl);">
+                Technical deep-dives, startup insights, and thoughts on building the future.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="grid grid-cols-3 gap-lg">
+
+                <!-- Blog Post 1 (Timeline) -->
+                <a href="#" class="blog-card reveal tilt-card" style="text-decoration: none; transition-delay: 200ms;">
+                    <div class="blog-card-image"
+                        style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="git-branch" style="width: 48px; height: 48px; color: white;"></i>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span>Jul 20, 2025</span>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">Interning Remotely: Practical Web Development Skills</h3>
+                        <p class="blog-card-excerpt">How a virtual internship at Vault of Codes accelerated my practical skills — project workflows, code reviews, and delivering production-ready features.</p>
+                        <div class="blog-card-tags">
+                            <span class="chip">Internship</span>
+                            <span class="chip">Web Dev</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 2 (Timeline) -->
+                <a href="#" class="blog-card reveal tilt-card" style="text-decoration: none; transition-delay: 100ms;">
+                    <div class="blog-card-image"
+                        style="background: linear-gradient(135deg, #22c55e 0%, #10b981 100%); display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="book-open" style="width: 48px; height: 48px; color: white;"></i>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span>Aug 05, 2024</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">Starting Engineering: Lessons from Semester One</h3>
+                        <p class="blog-card-excerpt">Key takeaways from joining B.Tech in ECE — coursework, tools, and the mindset that helped me transition from basics to building projects.</p>
+                        <div class="blog-card-tags">
+                            <span class="chip">Education</span>
+                            <span class="chip">Career</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 3 (Timeline) -->
+                 <a href="#" class="blog-card reveal tilt-card" style="text-decoration: none;">
+                    <div class="blog-card-image"
+                        style="background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%); display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="code" style="width: 48px; height: 48px; color: white;"></i>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span>Jan 10, 2024</span>
+                            <span>•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">From First Line to Foundations</h3>
+                        <p class="blog-card-excerpt">Reflections on writing my first line of code and the programming fundamentals that shaped my early learning path.</p>
+                        <div class="blog-card-tags">
+                            <span class="chip">Learning</span>
+                            <span class="chip">Beginnings</span>
+                        </div>
+                    </div>
+                </a>
+                
+
+                
+
+                
+
+                
+
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center" style="margin-top: var(--space-3xl);">
+                <button class="btn btn-secondary reveal">
+                    Load More Articles
+                    <i data-lucide="chevron-down" style="width: 18px; height: 18px;"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">
+                © 2024 Muskan Kumar. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="footer-social-link"
+                    aria-label="GitHub">
+                    <i data-lucide="github" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="footer-social-link"
+                    aria-label="LinkedIn">
+                    <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://x.com/muskankumar7842" target="_blank" class="footer-social-link" aria-label="Twitter">
+                    <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="footer-social-link"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank" class="footer-social-link"
+                    aria-label="YouTube">
+                    <i data-lucide="youtube" style="width: 20px; height: 20px;"></i>
+                </a>
+            </div>
+
+            <button class="back-to-top" aria-label="Back to top">
+                <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/effects.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

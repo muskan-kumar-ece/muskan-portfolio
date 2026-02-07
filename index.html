@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description
+
+" content="Muskan Kumar - Engineering Entrepreneur, Full Stack Developer, and Startup Founder. Building products that scale.">
+    <meta name="keywords"
+        content="Muskan Kumar, Full Stack Developer, Startup Founder, Enquebet, AI Research, Software Engineer">
+    <meta name="author" content="Muskan Kumar">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Muskan Kumar - Founder & Engineer">
+    <meta property="og:description" content="Engineering Entrepreneur building products that scale.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muskankumar.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muskan Kumar - Founder & Engineer">
+
+    <title>Muskan Kumar | Founder & Engineer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/index-responsive.css">
+
+    <style>
+        /* Unique styles that are page-specific and not in external CSS */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .portrait-container {
+            position: relative;
+            display: inline-block;
+        }
+
+
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+
+        /* Social Hub Card specific styling */
+        .social-hub-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(79, 140, 255, 0.05));
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .social-hub-card:hover::before {
+            opacity: 1;
+        }
+
+        .social-hub-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-lg);
+            font-size: 28px;
+        }
+
+        /* Form Field Floating Labels */
+        .form-field {
+            position: relative;
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-field input:focus~label,
+        .form-field input:not(:placeholder-shown)~label,
+        .form-field textarea:focus~label,
+        .form-field textarea:not(:placeholder-shown)~label {
+            top: var(--space-sm);
+            left: var(--space-md);
+            font-size: var(--text-xs);
+            background: var(--bg-surface);
+            padding: 0 8px;
+            color: var(--accent-primary);
+        }
+
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-logo">MK</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+    <!-- Gradient Mesh Background -->
+    <div class="gradient-mesh"></div>
+
+    <!-- Menu Backdrop for Mobile -->
+    <div class="menu-backdrop"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span>MK</span>
+            </a>
+
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link active">Home</a></li>
+                <li><a href="identity.html" class="navbar-link">Identity</a></li>
+                <li><a href="ecosystem.html" class="navbar-link">Ecosystem</a></li>
+                <li><a href="proof.html" class="navbar-link">Proof</a></li>
+                <li><a href="timeline.html" class="navbar-link">Timeline</a></li>
+                <li><a href="lab.html" class="navbar-link">Lab</a></li>
+                <li><a href="blog.html" class="navbar-link">Blog</a></li>
+                <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+                <li><a href="connect.html" class="navbar-link">Connect</a></li>
+            </ul>
+
+            <div class="navbar-actions">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Command Palette -->
+    <div class="command-palette-backdrop"></div>
+    <div class="command-palette">
+        <input type="text" class="command-palette-input" placeholder="Type a command or search... (Ctrl+K)">
+        <div class="command-palette-results"></div>
+    </div>
+
+    <!-- Floating Social Bar -->
+    <div class="floating-social-bar">
+        <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="floating-social-link"
+            aria-label="Instagram">
+            <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="floating-social-link"
+            aria-label="LinkedIn">
+            <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+        </a>
+        <a href="https://github.com/muskan-kumar-ece" target="_blank" class="floating-social-link" aria-label="GitHub">
+            <i data-lucide="github" style="width: 20px; height: 20px;"></i>
+        </a>
+        <a href="https://x.com/muskankumar7842" target="_blank" class="floating-social-link" aria-label="Twitter">
+            <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+        </a>
+        <a href="mailto:muskankumar7842@gmail.com" class="floating-social-link" aria-label="Email">
+            <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section"
+        style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 100px;">
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <h1 class="hero-title gradient-text-animated reveal"
+                        style="font-size: clamp(2.5rem, 7.5vw, 5.5rem); margin-bottom: var(--space-md); white-space: nowrap;">
+                        Muskan Kumar
+                    </h1>
+
+                    <div class="hero-subtitle reveal"
+                        style="font-size: var(--text-xl); color: var(--text-secondary); margin-bottom: var(--space-2xl);">
+                        <div class="typing-container"
+                            data-words="Founder of Enquebet,Full Stack Engineer,AI Research Enthusiast,Building Products That Scale">
+                        </div>
+                    </div>
+
+                    <div class="hero-cta reveal flex gap-lg flex-wrap" style="margin-bottom: var(--space-lg);">
+                        <a href="ecosystem.html" class="btn btn-primary magnetic-btn">
+                            <i data-lucide="rocket" style="width: 18px; height: 18px;"></i>
+                            Enter Ecosystem
+                        </a>
+                        <a href="proof.html" class="btn btn-secondary magnetic-btn">
+                            <i data-lucide="award" style="width: 18px; height: 18px;"></i>
+                            View Proof
+                        </a>
+                        <a href="contact.html" class="btn btn-ghost magnetic-btn">
+                            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
+                            Contact Me
+                        </a>
+                    </div>
+
+                    <button onclick="document.getElementById('social-hub').scrollIntoView({behavior: 'smooth'})"
+                        class="btn btn-primary magnetic-btn reveal" style="margin-top: var(--space-md);">
+                        <i data-lucide="users" style="width: 18px; height: 18px;"></i>
+                        Connect With Me
+                    </button>
+                </div>
+
+                <div class="portrait-container reveal-right"
+                    style="display: flex; justify-content: center; align-items: center; position: relative;">
+                    <div class="portrait-glow"></div>
+                    <img src="assets/images/muskankumar.png" alt="Muskan Kumar - Founder & Engineer"
+                        class="founder-portrait">
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="animate-bounce text-center" style="margin-top: var(--space-4xl);">
+                <i data-lucide="chevron-down" style="width: 32px; height: 32px; color: var(--text-muted);"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="section stats-section" style="padding: var(--space-4xl) 0;">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-lg" style="max-width: 900px; margin: 0 auto;">
+                <div class="card-glass stat-card reveal tilt-card">
+                    <div class="stat-value" data-target="5">0+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="card-glass stat-card reveal tilt-card" style="transition-delay: 100ms;">
+                    <div class="stat-value" data-target="10">0+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="card-glass stat-card reveal tilt-card" style="transition-delay: 200ms;">
+                    <div class="stat-value" data-target="1">0+</div>
+                    <div class="stat-label">Years Learning</div>
+                </div>
+                <div class="card-glass stat-card reveal tilt-card" style="transition-delay: 300ms;">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Active Startup</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Hub Section -->
+    <section id="social-hub" class="section" style="padding: var(--space-4xl) 0; background: var(--bg-surface);">
+        <div class="container">
+            <h2 class="text-center reveal" style="margin-bottom: var(--space-md);">Find Me <span
+                    class="gradient-text">Across The Web</span></h2>
+            <p class="text-center reveal"
+                style="color: var(--text-secondary); margin-bottom: var(--space-2xl); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Connect with me on various platforms and stay updated with my latest work.</p>
+
+            <div class="social-hub-grid">
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank"
+                    class="social-hub-card reveal tilt-card">
+                    <div class="social-hub-icon" style="background: linear-gradient(135deg, #E1306C, #C13584);">
+                        <i data-lucide="instagram" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div class="social-hub-info">
+                        <div class="social-hub-name">Instagram</div>
+                        <div class="social-hub-handle">@muskan_kumar._</div>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank"
+                    class="social-hub-card reveal tilt-card" style="transition-delay: 100ms;">
+                    <div class="social-hub-icon" style="background: linear-gradient(135deg, #0077B5, #0A66C2);">
+                        <i data-lucide="linkedin" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div class="social-hub-info">
+                        <div class="social-hub-name">LinkedIn</div>
+                        <div class="social-hub-handle">Muskan Kumar</div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="social-hub-card reveal tilt-card"
+                    style="transition-delay: 200ms;">
+                    <div class="social-hub-icon" style="background: linear-gradient(135deg, #333, #24292e);">
+                        <i data-lucide="github" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div class="social-hub-info">
+                        <div class="social-hub-name">GitHub</div>
+                        <div class="social-hub-handle">@muskan-kumar-ece</div>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank"
+                    class="social-hub-card reveal tilt-card" style="transition-delay: 300ms;">
+                    <div class="social-hub-icon" style="background: linear-gradient(135deg, #FF0000, #CC0000);">
+                        <i data-lucide="youtube" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div class="social-hub-info">
+                        <div class="social-hub-name">YouTube</div>
+                        <div class="social-hub-handle">Circuit Guruji</div>
+                    </div>
+                </a>
+
+                <a href="https://x.com/muskankumar7842" target="_blank" class="social-hub-card reveal tilt-card"
+                    style="transition-delay: 400ms;">
+                    <div class="social-hub-icon" style="background: linear-gradient(135deg, #1DA1F2, #0d8bd9);">
+                        <i data-lucide="twitter" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div class="social-hub-info">
+                        <div class="social-hub-name">Twitter / X</div>
+                        <div class="social-hub-handle">@muskankumar7842</div>
+                    </div>
+                </a>
+
+                <a href="https://www.facebook.com/muskan.kumar.424124" target="_blank"
+                    class="social-hub-card reveal tilt-card" style="transition-delay: 500ms;">
+                    <div class="social-hub-icon" style="background: linear-gradient(135deg, #1877F2, #0d5dbd);">
+                        <i data-lucide="facebook" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div class="social-hub-info">
+                        <div class="social-hub-name">Facebook</div>
+                        <div class="social-hub-handle">Muskan Kumar</div>
+                    </div>
+                </a>
+
+                <a href="https://scholar.google.com/citations?hl=en&user=sYrv0GcAAAAJ" target="_blank"
+                    class="social-hub-card reveal tilt-card" style="transition-delay: 600ms;">
+                    <div class="social-hub-icon" style="background: linear-gradient(135deg, #4285F4, #356ac3);">
+                        <i data-lucide="graduation-cap" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div class="social-hub-info">
+                        <div class="social-hub-name">Google Scholar</div>
+                        <div class="social-hub-handle">Research Publications</div>
+                    </div>
+                </a>
+
+                <a href="mailto:muskankumar7842@gmail.com" class="social-hub-card reveal tilt-card"
+                    style="transition-delay: 700ms;">
+                    <div class="social-hub-icon" style="background: var(--accent-gradient);">
+                        <i data-lucide="mail" style="width: 28px; height: 28px; color: white;"></i>
+                    </div>
+                    <div class="social-hub-info">
+                        <div class="social-hub-name">Email</div>
+                        <div class="social-hub-handle">muskankumar7842@gmail.com</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Intro -->
+    <section class="section" style="padding: var(--space-4xl) 0;">
+        <div class="container container-narrow text-center">
+            <h2 class="reveal" style="margin-bottom: var(--space-lg);">
+                Building the <span class="gradient-text">Future</span>
+            </h2>
+            <p class="reveal"
+                style="font-size: var(--text-lg); line-height: 1.8; max-width: 700px; margin: 0 auto var(--space-2xl);">
+                I'm an engineering entrepreneur passionate about creating impactful products.
+                From full-stack development to AI research, I bridge the gap between innovative ideas
+                and scalable solutions.
+            </p>
+            <a href="identity.html" class="btn btn-secondary reveal">
+                Learn More About Me
+                <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Projects Preview -->
+    <section class="section" style="padding: var(--space-4xl) 0; background: var(--bg-surface);">
+        <div class="container">
+            <div class="flex justify-between items-center flex-wrap gap-lg" style="margin-bottom: var(--space-2xl);">
+                <h2 class="reveal">Featured <span class="gradient-text">Projects</span></h2>
+                <a href="ecosystem.html" class="btn btn-ghost reveal">
+                    View All
+                    <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-3 gap-lg">
+                <!-- Flagship Project -->
+                <div class="project-card flagship reveal tilt-card">
+                    <div
+                        style="height: 250px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: var(--text-4xl); font-weight: 700; color: white;">Enquebet</span>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="badge badge-primary" style="margin-bottom: var(--space-sm);">Flagship
+                            Startup</span>
+                        <h3 class="project-card-title">Enquebet</h3>
+                        <p class="project-card-desc">My flagship startup focused on building a collaborative platform for ideas, projects, and innovation.</p>
+                        <div class="tech-stack" style="margin-top: var(--space-md);">
+                            <span class="chip">React</span>
+                            <span class="chip">Django</span>
+                            <span class="chip">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal tilt-card" style="transition-delay: 100ms;">
+                    <div
+                        style="height: 200px; background: linear-gradient(135deg, #22c55e, #16a34a); display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="code-2" style="width: 64px; height: 64px; color: white;"></i>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="badge badge-secondary">Full Stack</span>
+                        <h3 class="project-card-title">AI Assistant Platform</h3>
+                        <p class="project-card-desc">Quebet AI — an intelligent, project-focused assistant that helps users plan, build, and complete projects efficiently.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal tilt-card" style="transition-delay: 200ms;">
+                    <div
+                        style="height: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="smartphone" style="width: 64px; height: 64px; color: white;"></i>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="badge badge-highlight">Mobile App</span>
+                        <h3 class="project-card-title">E-commerce Platform</h3>
+                        <p class="project-card-desc">An electronics marketplace designed for components, kits, and hands-on project support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-section" class="section" style="padding: var(--space-4xl) 0;">
+        <div class="container">
+            <h2 class="text-center reveal" style="margin-bottom: var(--space-md);">Let's Build <span
+                    class="gradient-text">Something Together</span></h2>
+            <p class="text-center reveal"
+                style="color: var(--text-secondary); margin-bottom: var(--space-2xl); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Have a project idea or just want to say hello? Drop me a message and I'll get back to you within 24
+                hours.</p>
+
+            <div class="contact-form-container reveal">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="89ec225b-daec-4b68-a8be-7d413b287d8c">
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+                    <div class="form-field">
+                        <input type="text" name="name" id="name" placeholder=" " required>
+                        <label for="name">Your Name</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="email" name="email" id="email" placeholder=" " required>
+                        <label for="email">Email Address</label>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" name="user_subject" id="subject" placeholder=" ">
+                        <label for="subject">Subject (Optional)</label>
+                    </div>
+
+                    <div class="form-field">
+                        <textarea name="message" id="message" placeholder=" " required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg magnetic-btn" style="width: 100%;">
+                        <i data-lucide="send" style="width: 20px; height: 20px;"></i>
+                        <span>Send Message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">
+                © 2024 Muskan Kumar. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="footer-social-link"
+                    aria-label="GitHub">
+                    <i data-lucide="github" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="footer-social-link"
+                    aria-label="LinkedIn">
+                    <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://x.com/muskankumar7842" target="_blank" class="footer-social-link" aria-label="Twitter">
+                    <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="footer-social-link"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank" class="footer-social-link"
+                    aria-label="YouTube">
+                    <i data-lucide="youtube" style="width: 20px; height: 20px;"></i>
+                </a>
+            </div>
+
+            <button class="back-to-top" aria-label="Back to top">
+                <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/effects.js"></script>
+
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

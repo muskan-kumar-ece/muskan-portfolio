@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muskan Kumar's visual gallery - moments captured in pixels.">
+    <title>Gallery | Muskan Kumar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive-global.css">
+
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: var(--radius-xl);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--glow-primary);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all var(--transition-base);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    transparent 0%,
+                    rgba(0, 0, 0, 0.7) 100%);
+            opacity: 0;
+            transition: all var(--transition-base);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: var(--space-lg);
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-title {
+            color: white;
+            font-weight: 600;
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-xs);
+        }
+
+        .gallery-item-category {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: var(--text-sm);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: var(--space-2xl);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: var(--radius-xl);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            justify-content: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            color: var(--text-primary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .filter-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-logo">MK</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+    <canvas id="particles-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <div class="gradient-mesh"></div>
+
+    <!-- Menu Backdrop for Mobile -->
+    <div class="menu-backdrop"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo"><span>MK</span></a>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="identity.html" class="navbar-link">Identity</a></li>
+                <li><a href="ecosystem.html" class="navbar-link">Ecosystem</a></li>
+                <li><a href="proof.html" class="navbar-link">Proof</a></li>
+                <li><a href="timeline.html" class="navbar-link">Timeline</a></li>
+                <li><a href="lab.html" class="navbar-link">Lab</a></li>
+                <li><a href="blog.html" class="navbar-link">Blog</a></li>
+                <li><a href="gallery.html" class="navbar-link active">Gallery</a></li>
+                <li><a href="connect.html" class="navbar-link">Connect</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Command Palette -->
+    <div class="command-palette-backdrop"></div>
+    <div class="command-palette">
+        <input type="text" class="command-palette-input" placeholder="Type a command or search... (Ctrl+K)">
+        <div class="command-palette-results"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="section" style="padding-top: 150px;">
+        <div class="container text-center">
+            <h1 class="reveal">Visual <span class="gradient-text">Gallery</span></h1>
+            <p class="reveal"
+                style="font-size: var(--text-lg); color: var(--text-secondary); max-width: 600px; margin: var(--space-lg) auto var(--space-2xl);">
+                Moments captured in pixels. A visual journey through my work, experiences, and creative explorations.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="projects">Projects</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="achievements">Achievements</button>
+                <button class="filter-btn" data-filter="random">Random</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="section" style="padding-top: 0; padding-bottom: 80px;">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item reveal" data-category="projects">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop"
+                        alt="Project 1">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Web Development Project</div>
+                        <div class="gallery-item-category">Projects</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item reveal" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop"
+                        alt="Event 1">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Tech Conference 2024</div>
+                        <div class="gallery-item-category">Events</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item reveal" data-category="achievements">
+                    <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&h=600&fit=crop"
+                        alt="Achievement 1">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Hackathon Winner</div>
+                        <div class="gallery-item-category">Achievements</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item reveal" data-category="projects">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop"
+                        alt="Project 2">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Mobile App Design</div>
+                        <div class="gallery-item-category">Projects</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item reveal" data-category="random">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop"
+                        alt="Random 1">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Team Collaboration</div>
+                        <div class="gallery-item-category">Random</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item reveal" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop"
+                        alt="Event 2">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Workshop Session</div>
+                        <div class="gallery-item-category">Events</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item reveal" data-category="projects">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                        alt="Project 3">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Data Analytics Dashboard</div>
+                        <div class="gallery-item-category">Projects</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item reveal" data-category="achievements">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=600&fit=crop"
+                        alt="Achievement 2">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Certification Complete</div>
+                        <div class="gallery-item-category">Achievements</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item reveal" data-category="random">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
+                        alt="Random 2">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Creative Brainstorming</div>
+                        <div class="gallery-item-category">Random</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">
+                <i data-lucide="x" style="width: 20px; height: 20px; color: white;"></i>
+            </button>
+            <img src="" alt="Gallery item" id="lightboxImage">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">
+                © 2024 Muskan Kumar. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="footer-social-link"
+                    aria-label="GitHub">
+                    <i data-lucide="github" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="footer-social-link"
+                    aria-label="LinkedIn">
+                    <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://x.com/muskankumar7842" target="_blank" class="footer-social-link" aria-label="Twitter">
+                    <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="footer-social-link"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank" class="footer-social-link"
+                    aria-label="YouTube">
+                    <i data-lucide="youtube" style="width: 20px; height: 20px;"></i>
+                </a>
+            </div>
+
+            <button class="back-to-top" aria-label="Back to top">
+                <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/effects.js"></script>
+
+    <script>
+        // Gallery Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                // Filter items
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.style.opacity = '1', 10);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => item.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.querySelector('.lightbox-close');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                lightboxImage.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // ESC key to close lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

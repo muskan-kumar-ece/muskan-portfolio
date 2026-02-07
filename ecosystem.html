@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore Muskan Kumar's project ecosystem - startups, applications, and innovative solutions.">
+    <title>Ecosystem | Muskan Kumar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive-global.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader-logo">MK</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+    <canvas id="particles-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <div class="gradient-mesh"></div>
+
+    <!-- Menu Backdrop for Mobile -->
+    <div class="menu-backdrop"></div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo"><span>MK</span></a>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="identity.html" class="navbar-link">Identity</a></li>
+                <li><a href="ecosystem.html" class="navbar-link active">Ecosystem</a></li>
+                <li><a href="proof.html" class="navbar-link">Proof</a></li>
+                <li><a href="timeline.html" class="navbar-link">Timeline</a></li>
+                <li><a href="lab.html" class="navbar-link">Lab</a></li>
+                <li><a href="blog.html" class="navbar-link">Blog</a></li>
+                <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+                <li><a href="connect.html" class="navbar-link">Connect</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <button class="mobile-menu-btn"
+                    aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="command-palette-backdrop"></div>
+    <div class="command-palette">
+        <input type="text" class="command-palette-input" placeholder="Type a command or search... (Ctrl+K)">
+        <div class="command-palette-results"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="section" style="padding-top: 150px;">
+        <div class="container text-center">
+            <h1 class="reveal">My <span class="gradient-text">Ecosystem</span></h1>
+            <p class="reveal"
+                style="font-size: var(--text-lg); color: var(--text-secondary); max-width: 600px; margin: var(--space-lg) auto var(--space-2xl);">
+                A collection of products, startups, and experiments that represent my journey as a builder.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section style="padding-bottom: var(--space-2xl);">
+        <div class="container">
+            <div class="tabs reveal" data-target="#projects-grid" style="justify-content: center;">
+                <button class="tab active" data-category="all">All Projects</button>
+                <button class="tab" data-category="startup">Startups</button>
+                <button class="tab" data-category="fullstack">Full Stack</button>
+                <button class="tab" data-category="ai">AI/ML</button>
+                <button class="tab" data-category="mobile">Mobile</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div id="projects-grid" class="grid grid-cols-3 gap-lg">
+
+                <!-- Flagship: Enquebet -->
+                <div class="project-card flagship reveal tilt-card" data-category="startup">
+                    <div
+                        style="height: 280px; background: linear-gradient(135deg, #4f8cff 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <span style="font-size: 3.5rem; font-weight: 800; color: white;">Enquebet</span>
+                        <span
+                            style="position: absolute; top: 16px; right: 16px; background: white; color: #4f8cff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">FLAGSHIP</span>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="badge badge-primary" style="margin-bottom: var(--space-sm);">Active Startup</span>
+                        <h3 class="project-card-title">Enquebet</h3>
+                        <p class="project-card-desc">My flagship startup focused on building a collaborative platform for ideas, projects, and innovation.</p>
+                        <div class="tech-stack" style="margin-top: var(--space-md);">
+                            <span class="chip">React</span>
+                            <span class="chip">Django</span>
+                            <span class="chip">PostgreSQL</span>
+                            <span class="chip">AWS</span>
+                        </div>
+                        <div class="flex gap-sm" style="margin-top: var(--space-lg);">
+                            <a href="#" class="btn btn-primary btn-sm">Live Demo</a>
+                            <a href="#" class="btn btn-secondary btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                
+
+                <!-- Project 3 -->
+                <div class="project-card reveal tilt-card" data-category="fullstack" style="transition-delay: 200ms;">
+                    <div
+                        style="height: 200px; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="shopping-cart" style="width: 64px; height: 64px; color: white;"></i>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="badge badge-primary">Full Stack</span>
+                        <h3 class="project-card-title">E-Commerce Platform</h3>
+                        <p class="project-card-desc">An electronics marketplace designed for components, kits, and hands-on project support.
+                        </p>
+                        <div class="tech-stack" style="margin-top: var(--space-md);">
+                            <span class="chip">Next.js</span>
+                            <span class="chip">Stripe</span>
+                            <span class="chip">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                
+
+                <!-- Project 5 -->
+                
+
+                <!-- Project 6 -->
+                <div class="project-card reveal tilt-card" data-category="ai" style="transition-delay: 500ms;">
+                    <div
+                        style="height: 200px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="camera" style="width: 64px; height: 64px; color: white;"></i>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="badge badge-highlight">AI/Computer Vision</span>
+                        <h3 class="project-card-title">Lane Change Violation Detection</h3>
+                        <p class="project-card-desc">AI-based system to detect illegal lane changes by analyzing vehicle movement and indicator usage from traffic video.</p>
+                        <div class="tech-stack" style="margin-top: var(--space-md);">
+                            <span class="chip">Python</span>
+                            <span class="chip">YOLO</span>
+                            <span class="chip">OpenCV</span>
+                            <span class="chip">DeepSORT</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background: var(--bg-surface);">
+        <div class="container text-center">
+            <h2 class="reveal">Have a Project in Mind?</h2>
+            <p class="reveal" style="color: var(--text-secondary); margin: var(--space-lg) auto; max-width: 500px;">
+                Let's collaborate and build something amazing together.
+            </p>
+            <a href="contact.html" class="btn btn-primary reveal magnetic-btn">
+                <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+                Start a Project
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">
+                © 2024 Muskan Kumar. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="footer-social-link"
+                    aria-label="GitHub">
+                    <i data-lucide="github" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="footer-social-link"
+                    aria-label="LinkedIn">
+                    <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://x.com/muskankumar7842" target="_blank" class="footer-social-link" aria-label="Twitter">
+                    <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="footer-social-link"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank" class="footer-social-link"
+                    aria-label="YouTube">
+                    <i data-lucide="youtube" style="width: 20px; height: 20px;"></i>
+                </a>
+            </div>
+
+            <button class="back-to-top" aria-label="Back to top">
+                <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/effects.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

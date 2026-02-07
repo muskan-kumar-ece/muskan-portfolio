@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muskan Kumar's certifications, awards, hackathons, and achievements.">
+    <title>Proof | Muskan Kumar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive-global.css">
+    <link rel="stylesheet" href="css/blog-proof-responsive.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader-logo">MK</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+    <canvas id="particles-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <div class="gradient-mesh"></div>
+
+    <!-- Menu Backdrop for Mobile -->
+    <div class="menu-backdrop"></div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo"><span>MK</span></a>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="identity.html" class="navbar-link">Identity</a></li>
+                <li><a href="ecosystem.html" class="navbar-link">Ecosystem</a></li>
+                <li><a href="proof.html" class="navbar-link active">Proof</a></li>
+                <li><a href="timeline.html" class="navbar-link">Timeline</a></li>
+                <li><a href="lab.html" class="navbar-link">Lab</a></li>
+                <li><a href="blog.html" class="navbar-link">Blog</a></li>
+                <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+                <li><a href="connect.html" class="navbar-link">Connect</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <button class="mobile-menu-btn"
+                    aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="command-palette-backdrop"></div>
+    <div class="command-palette">
+        <input type="text" class="command-palette-input" placeholder="Type a command or search... (Ctrl+K)">
+        <div class="command-palette-results"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="section" style="padding-top: 150px;">
+        <div class="container text-center">
+            <h1 class="reveal">Proof of <span class="gradient-text">Work</span></h1>
+            <p class="reveal"
+                style="font-size: var(--text-lg); color: var(--text-secondary); max-width: 600px; margin: var(--space-lg) auto var(--space-2xl);">
+                Certifications, awards, and achievements that validate my skills and commitment to excellence.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section style="padding-bottom: var(--space-2xl);">
+        <div class="container">
+            <div class="tabs reveal" data-target="#proof-grid" style="justify-content: center;">
+                <button class="tab active" data-category="all">All</button>
+                <button class="tab" data-category="certificate">Certificates</button>
+                <button class="tab" data-category="Workshops">Workshops</button>
+                <button class="tab" data-category="hackathon">Hackathons</button>
+                <button class="tab" data-category="research">Research</button>
+                <button class="tab" data-category="internship">Internships</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div id="proof-grid" class="grid grid-cols-4 gap-lg">
+
+                <!-- New Certificates (User Provided) -->
+                <div class="card gallery-item reveal tilt-card" data-category="internship" style="cursor: pointer;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271764/Screenshot_5-2-2026_112142__meneju.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Internship
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Web Development Intern | VaultofCodes.in — Completed internship (Jun–Jul 2025) with hands-on experience in building and deploying web projects.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="certificate"
+                    style="cursor: pointer; transition-delay: 50ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271763/Screenshot_5-2-2026_112329__jczv4g.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Achievement
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Completed the Altium Education PCB Basic Design Course, demonstrating foundational skills in PCB design and circuit fundamentals.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="internship"
+                    style="cursor: pointer; transition-delay: 100ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271763/Screenshot_5-2-2026_112245__vqvnts.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Virtual Experience Certificate
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Completed the Software Engineering Job Simulation certificate from Forage in partnership with Electronic Arts, demonstrating practical software development skills.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="certificate"
+                    style="cursor: pointer; transition-delay: 150ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271762/Screenshot_5-2-2026_112414__ffikwe.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Achievement
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Completed the “English for Career Development” course by the University of Pennsylvania via Coursera, strengthening professional communication and workplace English skills.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="certificate"
+                    style="cursor: pointer; transition-delay: 200ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271761/Screenshot_5-2-2026_112458__ymvexk.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Achievement
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Completed TCS iON Career Edge (Young Professional) program focused on communication, soft skills, and career readiness.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="certificate"
+                    style="cursor: pointer; transition-delay: 250ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271760/Screenshot_5-2-2026_112643__prkxb2.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Achievement
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Completed HP LIFE “AI for Beginners” course, gaining foundational knowledge of artificial intelligence and its applications.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="certificate"
+                    style="cursor: pointer; transition-delay: 300ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271760/Screenshot_5-2-2026_112621__tuko2i.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Achievement
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Completed HP LIFE “Business Communications” course, developing effective professional communication skills.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="certificate"
+                    style="cursor: pointer; transition-delay: 350ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271760/Screenshot_5-2-2026_112545__kaxrrl.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Achievement
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Completed TCS iON Interview Skills course, focused on interview preparation and professional readiness.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="Workshops"
+                    style="cursor: pointer; transition-delay: 400ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271759/Screenshot_5-2-2026_112940__ixtgsw.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Participation
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Participated in a Career Guidance Session organized by E-Cell IIT Hyderabad in association with GradGuru.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="Workshops"
+                    style="cursor: pointer; transition-delay: 450ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271759/Screenshot_5-2-2026_112729__iqvk96.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Completion
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Completed be10x AI Tools & ChatGPT Workshop, gaining hands-on experience using AI for productivity, data analysis, and coding.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="certificate"
+                    style="cursor: pointer; transition-delay: 500ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271759/Screenshot_5-2-2026_113016__kedv5n.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Achievement
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Completed the McKinsey.org Forward Program, developing practical skills in problem-solving, communication, and workplace readiness.</p>
+                </div>
+
+                <div class="card gallery-item reveal tilt-card" data-category="Workshops"
+                    style="cursor: pointer; transition-delay: 550ms;">
+                    <div
+                        style="height: 200px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: var(--space-md); border: 1px solid var(--border-subtle);">
+                        <img src="https://res.cloudinary.com/dkpxpsshz/image/upload/v1770271759/Screenshot_5-2-2026_112819__qdu19c.jpg"
+                            alt="Certificate" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Certificate of Participation
+                    </h4>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Participated in the “Entrepreneurship for Inclusive Growth” (EAP) program conducted by MSME–CITD, Hyderabad.</p>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-backdrop"></div>
+    <div class="modal">
+        <button class="modal-close" aria-label="Close modal">
+            <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+        </button>
+        <img class="modal-image" src="" alt="Certificate">
+    </div>
+
+    <!-- Stats -->
+    <section class="section" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-lg" style="max-width: 800px; margin: 0 auto;">
+                <div class="card-glass stat-card reveal text-center">
+                    <div class="stat-value">7+</div>
+                    <div class="stat-label">Certificates</div>
+                </div>
+                
+                <div class="card-glass stat-card reveal text-center" style="transition-delay: 200ms;">
+                    <div class="stat-value">1+</div>
+                    <div class="stat-label">Hackathons</div>
+                </div>
+                <div class="card-glass stat-card reveal text-center" style="transition-delay: 300ms;">
+                    <div class="stat-value">1+</div>
+                    <div class="stat-label">Research Papers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">
+                © 2024 Muskan Kumar. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="footer-social-link"
+                    aria-label="GitHub">
+                    <i data-lucide="github" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="footer-social-link"
+                    aria-label="LinkedIn">
+                    <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://x.com/muskankumar7842" target="_blank" class="footer-social-link" aria-label="Twitter">
+                    <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="footer-social-link"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank" class="footer-social-link"
+                    aria-label="YouTube">
+                    <i data-lucide="youtube" style="width: 20px; height: 20px;"></i>
+                </a>
+            </div>
+
+            <button class="back-to-top" aria-label="Back to top">
+                <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+            </button>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/effects.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

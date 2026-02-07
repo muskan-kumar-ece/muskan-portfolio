@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muskan Kumar's journey timeline - key milestones and achievements.">
+    <title>Timeline | Muskan Kumar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive-global.css">
+
+    <style>
+        /* ===== TIMELINE DESKTOP LAYOUT (>= 1024px) ===== */
+        .timeline {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: var(--space-4xl) 0;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 80px;
+        }
+
+        /* Center vertical line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg,
+                    rgba(79, 140, 255, 0.3) 0%,
+                    rgba(139, 92, 246, 0.3) 100%);
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 40px 1fr;
+            gap: 0;
+            margin-bottom: 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Odd items - left side */
+        .timeline-item:nth-child(odd) .timeline-card {
+            grid-column: 1;
+            text-align: right;
+            justify-self: end;
+            max-width: 420px;
+        }
+
+        /* Even items - right side */
+        .timeline-item:nth-child(even) .timeline-card {
+            grid-column: 3;
+            text-align: left;
+            justify-self: start;
+            max-width: 420px;
+        }
+
+        /* Dot always in center column */
+        .timeline-dot {
+            grid-column: 2;
+            grid-row: 1;
+            align-self: start;
+            justify-self: center;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            border: 4px solid var(--bg-base);
+            box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.2);
+            z-index: 10;
+            position: relative;
+            top: 24px;
+        }
+
+        .timeline-card {
+            grid-row: 1;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            transition: all var(--transition-base);
+        }
+
+        .timeline-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--glow-primary);
+            transform: translateY(-4px);
+        }
+
+        .timeline-year {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-title {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+
+        .timeline-desc {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ===== TABLET LAYOUT (768px - 1023px) ===== */
+        @media (max-width: 1023px) {
+            .timeline {
+                max-width: 600px;
+                gap: 60px;
+            }
+
+            .timeline::before {
+                left: 0;
+                transform: none;
+            }
+
+            .timeline-item {
+                grid-template-columns: 40px 1fr;
+                margin-bottom: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-card,
+            .timeline-item:nth-child(even) .timeline-card {
+                grid-column: 2;
+                text-align: left;
+                justify-self: start;
+                max-width: 100%;
+            }
+
+            .timeline-dot {
+                grid-column: 1;
+                left: 0;
+                transform: none;
+            }
+        }
+
+        /* ===== MOBILE LAYOUT (< 768px) ===== */
+        @media (max-width: 767px) {
+            .timeline {
+                padding: var(--space-2xl) 0;
+                gap: 40px;
+            }
+
+            .timeline::before {
+                left: 16px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 32px 1fr;
+                margin-bottom: 0;
+                gap: 16px;
+            }
+
+            .timeline-dot {
+                width: 16px;
+                height: 16px;
+                top: 20px;
+                left: 16px;
+            }
+
+            .timeline-card {
+                padding: var(--space-lg);
+            }
+
+            .timeline-title {
+                font-size: var(--text-lg);
+            }
+
+            .timeline-desc {
+                font-size: var(--text-sm);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader-logo">MK</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+    <canvas id="particles-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <div class="gradient-mesh"></div>
+
+    <!-- Menu Backdrop for Mobile -->
+    <div class="menu-backdrop"></div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo"><span>MK</span></a>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="identity.html" class="navbar-link">Identity</a></li>
+                <li><a href="ecosystem.html" class="navbar-link">Ecosystem</a></li>
+                <li><a href="proof.html" class="navbar-link">Proof</a></li>
+                <li><a href="timeline.html" class="navbar-link active">Timeline</a></li>
+                <li><a href="lab.html" class="navbar-link">Lab</a></li>
+                <li><a href="blog.html" class="navbar-link">Blog</a></li>
+                <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+                <li><a href="connect.html" class="navbar-link">Connect</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <button class="mobile-menu-btn"
+                    aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="command-palette-backdrop"></div>
+    <div class="command-palette">
+        <input type="text" class="command-palette-input" placeholder="Type a command or search... (Ctrl+K)">
+        <div class="command-palette-results"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="section" style="padding-top: 150px;">
+        <div class="container text-center">
+            <h1 class="reveal">My <span class="gradient-text">Journey</span></h1>
+            <p class="reveal"
+                style="font-size: var(--text-lg); color: var(--text-secondary); max-width: 600px; margin: var(--space-lg) auto var(--space-2xl);">
+                A timeline of key milestones, achievements, and pivotal moments that shaped who I am today.
+            </p>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="timeline">
+
+                <!-- Entry 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2024</div>
+                        <h3 class="timeline-title">First Line of Code</h3>
+                        <p class="timeline-desc">Wrote my first line of code and began exploring programming fundamentals.</p>
+                    </div>
+                </div>
+
+                <!-- Entry 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2024</div>
+                        <h3 class="timeline-title">Started Engineering Journey</h3>
+                        <p class="timeline-desc">Joined B.Tech in Electronics &amp; Communication Engineering at Malla Reddy Engineering College.</p>
+                    </div>
+                </div>
+
+                <!-- Entry 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">Building Real-World Projects</h3>
+                        <p class="timeline-desc">Began developing practical projects in web development, AI, and computer vision.</p>
+                    </div>
+                </div>
+
+                <!-- Entry 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">Web Development Virtual Internship</h3>
+                        <p class="timeline-desc">Completed a Web Development virtual internship with Vault of Codes, gaining hands-on project experience.</p>
+                    </div>
+                </div>
+
+                <!-- Entry 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">Startup Development (Enquebet)</h3>
+                        <p class="timeline-desc">Started working on Enquebet, a project-focused collaboration and innovation platform.</p>
+                    </div>
+                </div>
+
+                <!-- Entry 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">2026</div>
+                        <h3 class="timeline-title">Research Publication</h3>
+                        <p class="timeline-desc">Published a research paper on arXiv, marking my entry into academic research.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background: var(--bg-surface);">
+        <div class="container text-center">
+            <h2 class="reveal">The Journey Continues...</h2>
+            <p class="reveal" style="color: var(--text-secondary); margin: var(--space-lg) auto; max-width: 500px;">
+                Every milestone is a stepping stone. Want to be part of the next chapter?
+            </p>
+            <a href="contact.html" class="btn btn-primary reveal magnetic-btn">
+                <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+                Let's Connect
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">
+                © 2024 Muskan Kumar. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="footer-social-link"
+                    aria-label="GitHub">
+                    <i data-lucide="github" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="footer-social-link"
+                    aria-label="LinkedIn">
+                    <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://x.com/muskankumar7842" target="_blank" class="footer-social-link" aria-label="Twitter">
+                    <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="footer-social-link"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank" class="footer-social-link"
+                    aria-label="YouTube">
+                    <i data-lucide="youtube" style="width: 20px; height: 20px;"></i>
+                </a>
+            </div>
+
+            <button class="back-to-top" aria-label="Back to top">
+                <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/effects.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

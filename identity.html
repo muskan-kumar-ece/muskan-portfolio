@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="About Muskan Kumar - Learn about my journey, values, and vision as an engineering entrepreneur.">
+    <title>Identity | Muskan Kumar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive-global.css">
+    <link rel="stylesheet" href="css/identity-responsive.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-logo">MK</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+    <canvas id="particles-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <div class="gradient-mesh"></div>
+
+    <!-- Menu Backdrop for Mobile -->
+    <div class="menu-backdrop"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo"><span>MK</span></a>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="identity.html" class="navbar-link active">Identity</a></li>
+                <li><a href="ecosystem.html" class="navbar-link">Ecosystem</a></li>
+                <li><a href="proof.html" class="navbar-link">Proof</a></li>
+                <li><a href="timeline.html" class="navbar-link">Timeline</a></li>
+                <li><a href="lab.html" class="navbar-link">Lab</a></li>
+                <li><a href="blog.html" class="navbar-link">Blog</a></li>
+                <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+                <li><a href="connect.html" class="navbar-link">Connect</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="theme-toggle" aria-label="Toggle theme"></button>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Command Palette -->
+    <div class="command-palette-backdrop"></div>
+    <div class="command-palette">
+        <input type="text" class="command-palette-input" placeholder="Type a command or search... (Ctrl+K)">
+        <div class="command-palette-results"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="section identity-hero">
+        <div class="container">
+            <div class="identity-hero-layout">
+                <!-- Portrait -->
+                <div class="identity-profile-container reveal-left text-center">
+                    <div class="identity-profile-image-wrapper">
+                        <div class="portrait-glow" style="border-radius: var(--radius-2xl);">
+                            <div class="identity-profile-image">
+                                <span>MK</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intro -->
+                <div class="identity-text-content reveal-right">
+                    <h1>
+                        Hi, I'm <span class="gradient-text">Muskan Kumar</span>
+                    </h1>
+                    <p>
+                        An engineering entrepreneur with a passion for building products that make a difference.
+                        I believe in the power of technology to solve real-world problems and create lasting impact.
+                    </p>
+                    <div class="identity-buttons">
+                        <a href="assets/Muskan_Kumar_Resume.pdf" class="btn btn-primary magnetic-btn" download>
+                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+                            Download Resume
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary magnetic-btn">
+                            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who I Am -->
+    <section class="section" style="background: var(--bg-surface);">
+        <div class="container container-narrow">
+            <h2 class="text-center reveal" style="margin-bottom: var(--space-2xl);">
+                Who I <span class="gradient-text">Am</span>
+            </h2>
+            <div class="card-glass reveal" style="padding: var(--space-2xl);">
+                <p style="font-size: var(--text-lg); line-height: 1.9; color: var(--text-secondary);">
+                    I'm a full-stack engineer and startup founder based in India. My journey in technology began
+                    with a curiosity about how things work, which evolved into a passion for creating solutions
+                    that scale.
+                </p>
+                <br>
+                <p style="font-size: var(--text-lg); line-height: 1.9; color: var(--text-secondary);">
+                    Beyond coding, I'm deeply interested in AI research, product design, and entrepreneurship.
+                    I believe that the best products are born at the intersection of technology and human needs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Build -->
+    <section class="section">
+        <div class="container container-narrow">
+            <h2 class="text-center reveal" style="margin-bottom: var(--space-2xl);">
+                What I <span class="gradient-text">Build</span>
+            </h2>
+            <div class="grid grid-cols-2 gap-lg">
+                <div class="card reveal tilt-card">
+                    <i data-lucide="code-2"
+                        style="width: 48px; height: 48px; color: var(--accent-primary); margin-bottom: var(--space-lg);"></i>
+                    <h4 style="margin-bottom: var(--space-sm);">Full Stack Applications</h4>
+                    <p style="color: var(--text-muted);">End-to-end web and mobile applications with modern tech stacks.
+                    </p>
+                </div>
+                <div class="card reveal tilt-card" style="transition-delay: 100ms;">
+                    <i data-lucide="brain"
+                        style="width: 48px; height: 48px; color: var(--accent-secondary); margin-bottom: var(--space-lg);"></i>
+                    <h4 style="margin-bottom: var(--space-sm);">AI/ML Solutions</h4>
+                    <p style="color: var(--text-muted);">Intelligent systems that learn, adapt, and solve complex
+                        problems.</p>
+                </div>
+                <div class="card reveal tilt-card" style="transition-delay: 200ms;">
+                    <i data-lucide="rocket"
+                        style="width: 48px; height: 48px; color: var(--accent-highlight); margin-bottom: var(--space-lg);"></i>
+                    <h4 style="margin-bottom: var(--space-sm);">Startup Products</h4>
+                    <p style="color: var(--text-muted);">MVPs and scalable products that validate ideas and capture
+                        markets.</p>
+                </div>
+                <div class="card reveal tilt-card" style="transition-delay: 300ms;">
+                    <i data-lucide="palette"
+                        style="width: 48px; height: 48px; color: var(--success); margin-bottom: var(--space-lg);"></i>
+                    <h4 style="margin-bottom: var(--space-sm);">UI/UX Design</h4>
+                    <p style="color: var(--text-muted);">Beautiful, intuitive interfaces that users love to interact
+                        with.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Believe -->
+    <section class="section" style="background: var(--bg-surface);">
+        <div class="container container-narrow">
+            <h2 class="text-center reveal" style="margin-bottom: var(--space-2xl);">
+                What I <span class="gradient-text">Believe</span>
+            </h2>
+            <div class="grid grid-cols-2 gap-lg">
+                <div class="value-card reveal">
+                    <h4 class="gradient-text" style="margin-bottom: var(--space-sm);">Innovation</h4>
+                    <p style="color: var(--text-muted);">Push boundaries. Challenge conventions. Create what doesn't
+                        exist yet.</p>
+                </div>
+                <div class="value-card reveal" style="transition-delay: 100ms;">
+                    <h4 class="gradient-text" style="margin-bottom: var(--space-sm);">Execution</h4>
+                    <p style="color: var(--text-muted);">Ideas are cheap; execution is everything. Ship fast, iterate
+                        faster.</p>
+                </div>
+                <div class="value-card reveal" style="transition-delay: 200ms;">
+                    <h4 class="gradient-text" style="margin-bottom: var(--space-sm);">Consistency</h4>
+                    <p style="color: var(--text-muted);">Small daily improvements lead to extraordinary results over
+                        time.</p>
+                </div>
+                <div class="value-card reveal" style="transition-delay: 300ms;">
+                    <h4 class="gradient-text" style="margin-bottom: var(--space-sm);">Impact</h4>
+                    <p style="color: var(--text-muted);">Build things that matter. Make a difference in people's lives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Long-Term Vision -->
+    <section class="section">
+        <div class="container container-narrow text-center">
+            <h2 class="reveal" style="margin-bottom: var(--space-xl);">
+                Long-Term <span class="gradient-text">Vision</span>
+            </h2>
+            <div class="card-glass reveal" style="padding: var(--space-2xl);">
+                <p
+                    style="font-size: var(--text-xl); line-height: 1.8; color: var(--text-secondary); font-style: italic;">
+                    "To build technology companies that solve meaningful problems,
+                    create economic value, and inspire the next generation of builders."
+                </p>
+            </div>
+            <div class="flex justify-center gap-lg flex-wrap" style="margin-top: var(--space-2xl);">
+                <a href="ecosystem.html" class="btn btn-primary reveal magnetic-btn">
+                    <i data-lucide="rocket" style="width: 18px; height: 18px;"></i>
+                    Explore My Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copyright">
+                © 2024 Muskan Kumar. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/muskan-kumar-ece" target="_blank" class="footer-social-link"
+                    aria-label="GitHub">
+                    <i data-lucide="github" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muskan-kumar-ece/" target="_blank" class="footer-social-link"
+                    aria-label="LinkedIn">
+                    <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://x.com/muskankumar7842" target="_blank" class="footer-social-link" aria-label="Twitter">
+                    <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.instagram.com/muskan_kumar._" target="_blank" class="footer-social-link"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                </a>
+                <a href="https://www.youtube.com/@circuitguruji" target="_blank" class="footer-social-link"
+                    aria-label="YouTube">
+                    <i data-lucide="youtube" style="width: 20px; height: 20px;"></i>
+                </a>
+            </div>
+
+            <button class="back-to-top" aria-label="Back to top">
+                <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/effects.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
