@@ -76,12 +76,4 @@
         <priority>0.7</priority>
     </url>
 
-    <!-- Contact Page -->
-    <url>
-        <loc>https://muskankumar.in/contact.html</loc>
-        <lastmod>2026-02-07</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
 </urlset>
