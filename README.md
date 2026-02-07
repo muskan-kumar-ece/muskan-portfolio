@@ -40,6 +40,8 @@ muskankumar/
 ├── gallery.html            # Visual gallery with filters
 ├── connect.html            # Social connections hub
 ├── contact.html            # Contact form
+├── sitemap.xml             # SEO sitemap for search engines
+├── robots.txt              # Search engine crawling rules
 │
 ├── css/
 │   ├── styles.css                  # Core design system & utilities
@@ -318,7 +320,40 @@ Change the spacing scale in `css/styles.css`:
 
 ---
 
-## 💡 Development Notes
+## � SEO Optimization
+
+The project includes essential SEO files to help with search engine ranking:
+
+### sitemap.xml
+- Lists all 10 pages of the website
+- Includes priority levels and update frequencies
+- Accessible at: `https://muskankumar.in/sitemap.xml`
+
+### robots.txt
+- Directs search engine crawlers
+- Allows full site crawling
+- References the sitemap location
+- Accessible at: `https://muskankumar.in/robots.txt`
+
+### How to Submit for Indexing
+
+1. **Google Search Console**
+   - Visit: https://search.google.com/search-console
+   - Add your property (muskankumar.in)
+   - Submit sitemap: `https://muskankumar.in/sitemap.xml`
+
+2. **Bing Webmaster Tools**
+   - Visit: https://www.bing.com/webmasters
+   - Add your site
+   - Submit sitemap URL
+
+3. **Update Dates**
+   - When you update pages, change the `<lastmod>` date in `sitemap.xml`
+   - This signals to search engines that content has changed
+
+---
+
+## �💡 Development Notes
 
 ### Built with Google Antigravity
 
@@ -394,7 +429,7 @@ This is a personal portfolio project. However, if you find issues or have sugges
 
 ## 📧 Contact
 
-- **Website**: [muskankumar.com](https://muskankumar.in)
+- **Website**: [muskankumar.com](https://muskankumar.com)
 - **Email**: muskankumar7842@gmail.com
 - **LinkedIn**: [Muskan Kumar](https://www.linkedin.com/in/muskan-kumar-ece/)
 - **GitHub**: [@muskan-kumar-ece](https://github.com/muskan-kumar-ece)
@@ -402,4 +437,3 @@ This is a personal portfolio project. However, if you find issues or have sugges
 ---
 
 **Made with ❤️ by Muskan Kumar | Enhanced with Google Antigravity**
-
