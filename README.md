@@ -3,13 +3,12 @@
 This is my personal portfolio website showcasing my projects, skills, and experience.
 
 ## 🚀 Live Demo
-https://yourdomain.com
+https://muskankumar.in
 
 ## 🛠 Built With
 - HTML
 - CSS
 - JavaScript  
-(or React / Next.js – update if needed)
 
 ## 📌 Features
 - Responsive design
