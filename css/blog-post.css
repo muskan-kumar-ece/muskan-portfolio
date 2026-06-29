@@ -1,0 +1,28 @@
+body {
+  font-family: Inter, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 24px;
+}
+
+.blog-title {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.blog-meta {
+  color: #94a3b8;
+  margin-bottom: 40px;
+}
+
+.blog-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
