@@ -7,5 +7,14 @@
     "tags": ["Test", "Portfolio"],
     "image": "assets/images/blog-placeholder.jpg",
     "url": "/blogs/my-first-blog.html"
+  },
+  {
+    "title": "Learning JavaScript",
+    "description": "How I learned fetch(), JSON and dynamic rendering.",
+    "date": "2026-06-30",
+    "readTime": "3 min read",
+    "tags": ["JavaScript", "Learning"],
+    "image": "assets/images/blog-placeholder.jpg",
+    "url": "/blogs/learning-javascript.html"
   }
 ]
