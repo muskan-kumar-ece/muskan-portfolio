@@ -236,51 +236,40 @@
 fetch('blogs.json')
   .then(response => response.json())
   .then(blogs => {
-
-    const container =
-      document.getElementById(
-        'blogs-container'
-      );
+    const container = document.getElementById('blogs-container');
 
     blogs.forEach(blog => {
-
       container.innerHTML += `
-      <div class="blog-card">
+        <a
+          href="${blog.url}"
+          class="blog-card"
+          style="text-decoration: none; color: inherit; display: block;"
+        >
+          <div class="blog-card-content">
 
-        <div
-          class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>${blog.date}</span>
+              <span>•</span>
+              <span>${blog.readTime}</span>
+            </div>
 
-          <div
-            class="blog-card-meta">
+            <h3 class="blog-card-title">
+              ${blog.title}
+            </h3>
 
-            <span>${blog.date}</span>
-            <span>•</span>
-            <span>${blog.readTime}</span>
+            <p class="blog-card-excerpt">
+              ${blog.description}
+            </p>
 
           </div>
-
-          <h3
-            class="blog-card-title">
-            ${blog.title}
-          </h3>
-
-          <p
-            class="blog-card-excerpt">
-            ${blog.description}
-          </p>
-
-        </div>
-
-      </div>
+        </a>
       `;
-
     });
-
   })
   .catch(error => {
-    console.error(error);
+    console.error('Error loading blogs:', error);
   });
-    </script>
+</script>
 </body>
 
 
