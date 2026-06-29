@@ -232,6 +232,16 @@
     <script src="js/cursor.js"></script>
     <script src="js/effects.js"></script>
     <script>lucide.createIcons();</script>
+    <script>
+fetch('blogs.json')
+  .then(response => response.json())
+  .then(blogs => {
+    console.log(blogs);
+  })
+  .catch(error => {
+    console.error('Error loading blogs:', error);
+  });
+    </script>
 </body>
 
 
