@@ -1,0 +1,11 @@
+[
+  {
+    "title": "My First Blog",
+    "description": "This is my first test blog.",
+    "date": "2026-06-29",
+    "readTime": "2 min read",
+    "tags": ["Test", "Portfolio"],
+    "image": "assets/images/blog-placeholder.jpg",
+    "url": "#"
+  }
+]
