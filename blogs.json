@@ -1,29 +1,74 @@
 [
   {
-    "title": "Cortex IT Solution: Homepage & Core Pages Snapshot",
-    "description": "A brief review of cortexitsolution.com covering services, navigation, messaging, and high-level positioning.",
+    "title": "Home Page Walkthrough: First Impression and Core Highlights",
+    "description": "A quick walkthrough of the homepage sections, layout choices, and the story they tell at first glance.",
     "date": "2026-10-17",
     "readTime": "5 min read",
-    "tags": ["Website Audit", "SEO", "Cortex IT Solution"],
+    "tags": ["Homepage", "Portfolio", "UX"],
     "image": "assets/images/blog-placeholder.jpg",
-    "url": "/blogs/my-first-blog.html"
+    "url": "/blogs/home-page-walkthrough.html"
   },
   {
-    "title": "Cortex IT Solution: Service and Content Gaps I Noticed",
-    "description": "Quick findings on thin service pages, content consistency, and trust signal improvements for cortexitsolution.com.",
+    "title": "Identity Page Notes: Personal Brand and Positioning",
+    "description": "How the identity page presents the mission, values, and background in a focused and readable format.",
     "date": "2026-10-17",
     "readTime": "4 min read",
-    "tags": ["Content Strategy", "UX Audit", "Cortex IT Solution"],
+    "tags": ["Identity", "Branding", "Storytelling"],
     "image": "assets/images/blog-placeholder.jpg",
-    "url": "/blogs/learning-javascript.html"
+    "url": "/blogs/identity-page-notes.html"
   },
   {
-    "title": "Cortex IT Solution: SEO Improvement Checklist",
-    "description": "A practical checklist to improve indexability, relevance, and conversions across Cortex IT Solution pages.",
+    "title": "Ecosystem Page Review: Projects and Product Direction",
+    "description": "A focused summary of the ecosystem page and how it communicates ongoing work and product thinking.",
     "date": "2026-10-17",
     "readTime": "6 min read",
-    "tags": ["SEO Checklist", "Growth", "Cortex IT Solution"],
+    "tags": ["Projects", "Ecosystem", "Product"],
     "image": "assets/images/blog-placeholder.jpg",
-    "url": "/blogs/cortex-seo-checklist.html"
+    "url": "/blogs/ecosystem-page-review.html"
+  },
+  {
+    "title": "Proof Page Breakdown: Certifications and Achievements",
+    "description": "A short look at how the proof page builds credibility through concrete milestones and recognitions.",
+    "date": "2026-10-17",
+    "readTime": "4 min read",
+    "tags": ["Proof", "Credentials", "Trust"],
+    "image": "assets/images/blog-placeholder.jpg",
+    "url": "/blogs/proof-page-breakdown.html"
+  },
+  {
+    "title": "Timeline Page Story: Journey Through Milestones",
+    "description": "How the timeline page structures growth, experience, and transitions in a clear progression.",
+    "date": "2026-10-17",
+    "readTime": "4 min read",
+    "tags": ["Timeline", "Career", "Journey"],
+    "image": "assets/images/blog-placeholder.jpg",
+    "url": "/blogs/timeline-page-story.html"
+  },
+  {
+    "title": "Lab Page Insights: Experiments and Learning in Public",
+    "description": "A brief note on the lab page and how experiments communicate curiosity, speed, and technical range.",
+    "date": "2026-10-17",
+    "readTime": "5 min read",
+    "tags": ["Lab", "Experiments", "Learning"],
+    "image": "assets/images/blog-placeholder.jpg",
+    "url": "/blogs/lab-page-insights.html"
+  },
+  {
+    "title": "Gallery Page Highlights: Visual Snapshot of the Journey",
+    "description": "A visual-first perspective on the gallery page and how it complements the rest of the portfolio.",
+    "date": "2026-10-17",
+    "readTime": "3 min read",
+    "tags": ["Gallery", "Visuals", "Portfolio"],
+    "image": "assets/images/blog-placeholder.jpg",
+    "url": "/blogs/gallery-page-highlights.html"
+  },
+  {
+    "title": "Connect Page Guide: Building Meaningful Network Paths",
+    "description": "A quick guide to the connect page and how each contact path serves different collaboration goals.",
+    "date": "2026-10-17",
+    "readTime": "4 min read",
+    "tags": ["Connect", "Networking", "Collaboration"],
+    "image": "assets/images/blog-placeholder.jpg",
+    "url": "/blogs/connect-page-guide.html"
   }
 ]
