@@ -1,20 +1,29 @@
 [
   {
-    "title": "My First Blog",
-    "description": "This is my first test blog.",
-    "date": "2026-06-29",
-    "readTime": "2 min read",
-    "tags": ["Test", "Portfolio"],
+    "title": "Cortex IT Solution: Homepage & Core Pages Snapshot",
+    "description": "A brief review of cortexitsolution.com covering services, navigation, messaging, and high-level positioning.",
+    "date": "2026-10-17",
+    "readTime": "5 min read",
+    "tags": ["Website Audit", "SEO", "Cortex IT Solution"],
     "image": "assets/images/blog-placeholder.jpg",
     "url": "/blogs/my-first-blog.html"
   },
   {
-    "title": "Learning JavaScript",
-    "description": "How I learned fetch(), JSON and dynamic rendering.",
-    "date": "2026-06-30",
-    "readTime": "3 min read",
-    "tags": ["JavaScript", "Learning"],
+    "title": "Cortex IT Solution: Service and Content Gaps I Noticed",
+    "description": "Quick findings on thin service pages, content consistency, and trust signal improvements for cortexitsolution.com.",
+    "date": "2026-10-17",
+    "readTime": "4 min read",
+    "tags": ["Content Strategy", "UX Audit", "Cortex IT Solution"],
     "image": "assets/images/blog-placeholder.jpg",
     "url": "/blogs/learning-javascript.html"
+  },
+  {
+    "title": "Cortex IT Solution: SEO Improvement Checklist",
+    "description": "A practical checklist to improve indexability, relevance, and conversions across Cortex IT Solution pages.",
+    "date": "2026-10-17",
+    "readTime": "6 min read",
+    "tags": ["SEO Checklist", "Growth", "Cortex IT Solution"],
+    "image": "assets/images/blog-placeholder.jpg",
+    "url": "/blogs/cortex-seo-checklist.html"
   }
 ]
