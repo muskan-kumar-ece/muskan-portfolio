@@ -62,21 +62,56 @@
 
     <!-- Blog Articles -->
     <url>
-        <loc>https://muskankumar.in/blogs/my-first-blog.html</loc>
+        <loc>https://muskankumar.in/blogs/home-page-walkthrough.html</loc>
         <lastmod>2026-10-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://muskankumar.in/blogs/learning-javascript.html</loc>
+        <loc>https://muskankumar.in/blogs/identity-page-notes.html</loc>
         <lastmod>2026-10-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://muskankumar.in/blogs/cortex-seo-checklist.html</loc>
+        <loc>https://muskankumar.in/blogs/ecosystem-page-review.html</loc>
+        <lastmod>2026-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://muskankumar.in/blogs/proof-page-breakdown.html</loc>
+        <lastmod>2026-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://muskankumar.in/blogs/timeline-page-story.html</loc>
+        <lastmod>2026-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://muskankumar.in/blogs/lab-page-insights.html</loc>
+        <lastmod>2026-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://muskankumar.in/blogs/gallery-page-highlights.html</loc>
+        <lastmod>2026-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://muskankumar.in/blogs/connect-page-guide.html</loc>
         <lastmod>2026-10-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
